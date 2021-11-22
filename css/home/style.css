@@ -1,0 +1,178 @@
+.hide {
+  display: none;
+}
+
+.btn {
+  border: 2px solid #fff;
+  border-radius: 60px;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.btn:hover {
+  color: #010101;
+  background-color: #fff;
+}
+
+.btn:active {
+  background-color: #FFBCA2;
+  border-color: #FFBCA2;
+}
+
+.logo {
+  position: relative;
+}
+
+.logo::before {
+  z-index: 0;
+  content: '';
+  position: absolute;
+  width: 165px;
+  height: 165px;
+  top: 5px;
+  left: -35px;
+  border: 2.65px solid #fff;
+  border-radius: 50%;
+}
+
+.logo::after {
+  z-index: 0;
+  content: '';
+  position: absolute;
+  width: 165px;
+  height: 165px;
+  top: 5px;
+  left: 45px;
+  border: 2.65px solid #fff;
+  border-radius: 50%;
+}
+
+.wrapper-home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  background: url("../../assets/full/113full.jpg") no-repeat center center;
+  background-size: cover;
+  font-family: Gilroy;
+  color: #fff;
+}
+
+.wrapper-home .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 0 0 80px 0;
+  padding: 70px;
+  width: 100%;
+}
+
+.wrapper-home .header .settings {
+  width: 40px;
+  height: 40px;
+  background: url("../../assets/svg/settings.svg") no-repeat center center;
+  background-size: contain;
+  opacity: 0.7;
+  cursor: pointer;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.wrapper-home .header .settings:hover {
+  opacity: 1;
+}
+
+.wrapper-home .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.wrapper-home .main .title {
+  margin: 0 0 150px;
+  font-size: 110px;
+  font-weight: 700;
+  line-height: 160px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.wrapper-home .main .title span {
+  position: relative;
+  z-index: 1;
+}
+
+.wrapper-home .main .main-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper-home .main .main-buttons .main-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 287px;
+  height: 62px;
+  margin: 0 40px 0 0;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 30px 40px;
+}
+
+.footer .rs-logo {
+  width: 85px;
+  height: 31px;
+  background: url("../../assets/svg/rs_school_logo.svg");
+}
+
+.footer .footer-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+}
+
+.footer .footer-info .developer {
+  margin: 0 40px 0 0;
+}
+/*# sourceMappingURL=style.css.map */

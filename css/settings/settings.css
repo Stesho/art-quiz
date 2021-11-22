@@ -1,0 +1,260 @@
+.wrapper-settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  background-color: #010101;
+  color: #fff;
+  font-family: Gilroy;
+  font-weight: 500;
+}
+
+.wrapper-settings .container {
+  width: 1300px;
+  margin: 0 auto;
+}
+
+.wrapper-settings .container .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px 0 0 0;
+}
+
+.wrapper-settings .container .header .close {
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  text-align: center;
+  opacity: 0.7;
+  cursor: pointer;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.wrapper-settings .container .header .close:hover {
+  opacity: 1;
+}
+
+.wrapper-settings .container .header .back {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.wrapper-settings .container .header .back .back-arrow {
+  margin: 0 20px 0 0;
+  width: 10px;
+  height: 20px;
+  background: url("../../assets/svg/arrow.svg") no-repeat center center;
+  background-size: cover;
+}
+
+.wrapper-settings .container .main {
+  margin: 100px 0 0 0;
+}
+
+.wrapper-settings .container .main .volume,
+.wrapper-settings .container .main .time-game,
+.wrapper-settings .container .main .answer-time {
+  margin: 80px 0 0 0;
+}
+
+.wrapper-settings .container .main .volume-title,
+.wrapper-settings .container .main .time-game-title,
+.wrapper-settings .container .main .answer-time-title {
+  font-size: 34px;
+  font-weight: 700;
+  margin: 0 0 40px 0;
+}
+
+.wrapper-settings .container .main .volume .volume-bar-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 490px;
+}
+
+.wrapper-settings .container .main .volume .volume-bar-wrapper .volume-bar {
+  -webkit-appearance: none;
+  margin: 0 0 10px 0;
+  height: 3px;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #FFBCA2), color-stop(50%, #A4A4A4));
+  background: linear-gradient(to right, #FFBCA2 50%, #A4A4A4 50%);
+}
+
+.wrapper-settings .container .main .volume .volume-bar-wrapper .volume-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
+.wrapper-settings .container .main .volume .volume-bar-wrapper .volume-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper-settings .container .main .volume .volume-bar-wrapper .volume-icons .volume-mute {
+  width: 40px;
+  height: 40px;
+  background: url("../../assets/svg/mute.svg") no-repeat left center;
+  cursor: pointer;
+}
+
+.wrapper-settings .container .main .volume .volume-bar-wrapper .volume-icons .volume-full {
+  width: 40px;
+  height: 40px;
+  background: url("../../assets/svg/full-volume.svg") no-repeat right center;
+  cursor: pointer;
+}
+
+.wrapper-settings .container .main .time-game .time-game-switcher .time-game-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60px;
+  height: 34px;
+  font-size: 24px;
+}
+
+.wrapper-settings .container .main .time-game .time-game-switcher .time-game-btn input {
+  display: none;
+}
+
+.wrapper-settings .container .main .time-game .time-game-switcher .time-game-btn .slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  cursor: pointer;
+  margin: 0 0 0 50px;
+  width: 48px;
+  height: 24px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.wrapper-settings .container .main .time-game .time-game-switcher .time-game-btn .slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.wrapper-settings .container .main .time-game .time-game-switcher .time-game-btn input:checked + .slider {
+  background-color: #FFBCA2;
+}
+
+.wrapper-settings .container .main .time-game .time-game-switcher .time-game-btn input:checked + .slider:before {
+  -webkit-transform: translateX(22px);
+          transform: translateX(22px);
+}
+
+.wrapper-settings .container .main .answer-time .answer-time-counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 30px;
+}
+
+.wrapper-settings .container .main .answer-time .answer-time-counter .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 33px;
+  height: 33px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  font-size: 30px;
+  cursor: pointer;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.wrapper-settings .container .main .answer-time .answer-time-counter .btn:hover {
+  color: #010101;
+  background-color: #fff;
+}
+
+.wrapper-settings .container .main .answer-time .answer-time-counter .answer-time-seconds {
+  padding: 0 20px;
+}
+
+.wrapper-settings .container .main .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 50px 0 0 0;
+}
+
+.wrapper-settings .container .main .buttons .buttons-default {
+  margin: 0 20px 0 0;
+}
+
+.wrapper-settings .container .main .buttons .buttons-default,
+.wrapper-settings .container .main .buttons .buttons-save {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 287px;
+  height: 62px;
+}
+/*# sourceMappingURL=settings.css.map */

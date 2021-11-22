@@ -1,0 +1,118 @@
+$pink: #FFBCA2;
+$black: #010101;
+$white: #fff; 
+
+$container-width: 1300px;
+$picture-width: 195px;
+
+.wrapper__art-quiz {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: $black;
+  color: $white;
+  font-family: Gilroy;
+  font-weight: 500;
+  .container {
+    width: $container-width;
+    margin: 0 auto;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 0;
+      .logo::before,
+      .logo::after {
+        border: 1px solid $white;
+        width: 62px;
+        height: 62px;
+        top: -7px;
+        opacity: 0.5;
+      }
+      .logo::before {
+        left: -12px;
+      }
+      .logo::after {
+        left: 16px;
+      }
+      .header__nav {
+        display: flex;
+        align-items: center;
+        .header__logo {
+          position: relative;
+          z-index: 1;
+          margin: 0 120px 0 0;
+          font-weight: 700;
+          font-size: 42px;
+          user-select: none; 
+          span {
+            color: $pink;
+          }
+        }
+        .nav {
+          display: flex;
+          font-size: 22px;
+          & a {
+            margin: 0 90px 0 0;
+            transition: all .2s;
+          }
+          & a:hover {
+            color: $pink;
+          }
+          & span {
+            font-weight: 700;
+            color: $pink;
+          }
+        }
+      }
+      
+      .settings {
+        width: 40px;
+        height: 40px;
+        background: url("../../assets/svg/settings.svg") no-repeat center center;
+        background-size: contain;
+        opacity: 0.7;
+      
+        cursor: pointer;
+        transition: all 0.4s;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 125px 0 0 0;
+      gap: 48px calc((1300px - 6*195px)/5);
+      .category {
+        .category__title {
+          display: flex;
+          justify-content: space-between;
+          margin: 0 0 10px 0;
+          font-size: 20px;
+          .category__score {
+            color: $pink;
+          }
+        }
+        .category__picture {  
+          width: $picture-width;
+          height: 206px;
+          cursor: pointer;
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            filter: grayscale(100%);
+            
+            transition: all .4s;
+          }
+          &:hover img{
+            filter: none;
+          }
+        }
+      }
+    }
+  }
+}
+

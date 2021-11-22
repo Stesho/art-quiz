@@ -1,0 +1,189 @@
+$active-btn: #FFBCA2;
+$black: #010101;
+$white: #fff; 
+
+.wrapper-settings {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: $black;
+  color: $white;
+  font-family: Gilroy;
+  font-weight: 500;
+  .container {
+    width: 1300px;
+    margin: 0 auto;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 0 0 0;
+      .close {
+        width: 40px;
+        height: 40px;
+        font-size: 40px;
+        text-align: center;
+        opacity: 0.7;
+
+        cursor: pointer;
+        transition: all .4s;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .back {
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        cursor: pointer;
+        .back-arrow {
+          margin: 0 20px 0 0;
+          width: 10px;
+          height: 20px;
+          background: url("../../assets/svg/arrow.svg") no-repeat center center;
+          background-size: cover;
+        }
+      }
+    }
+    .main {
+      margin: 100px 0 0 0;
+      .volume,
+      .time-game,
+      .answer-time {
+        margin: 80px 0 0 0;       
+      }
+      .volume-title,
+      .time-game-title,
+      .answer-time-title {
+        font-size: 34px;
+        font-weight: 700;
+        margin: 0 0 40px 0;       
+      }
+      .volume {
+        .volume-bar-wrapper {
+          display: flex;
+          flex-direction: column;
+          width: 490px;
+          .volume-bar {
+            -webkit-appearance: none;
+            margin: 0 0 10px 0;
+            height: 3px;
+            width: 100%;
+            background: linear-gradient(to right, $active-btn 50%, #A4A4A4 50%);
+            &::-webkit-slider-thumb {
+              -webkit-appearance: none;
+              height: 16px;
+              width: 16px;
+              border-radius: 50%;
+              background: $white;
+              cursor: pointer;
+            }
+          }
+          .volume-icons {
+            display: flex;
+            justify-content: space-between;
+            .volume-mute {
+              width: 40px;
+              height: 40px;
+              background: url("../../assets/svg/mute.svg") no-repeat left center;
+              cursor: pointer;
+            }
+            .volume-full {
+              width: 40px;
+              height: 40px;
+              background: url("../../assets/svg/full-volume.svg") no-repeat right center;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .time-game {
+        .time-game-switcher {
+          .time-game-btn {
+            display: flex;
+            align-items: center;
+            width: 60px;
+            height: 34px;
+            font-size: 24px;
+            & input {
+              display: none;
+            }
+            .slider {
+              display: flex;
+              align-items: center;
+              position: absolute;
+              cursor: pointer;
+              margin: 0 0 0 50px;
+              width: 48px;
+              height: 24px;
+              border: 1px solid $white;
+              border-radius: 20px;
+  
+              transition: .4s;
+            }
+            .slider:before {
+              position: absolute;
+              content: "";
+              height: 16px;
+              width: 16px;
+              left: 4px;
+              background-color: white;
+              border-radius: 50%; 
+              
+              transition: .4s;
+            }
+            input:checked + .slider {
+              background-color: $active-btn;
+            }
+            input:checked + .slider:before {
+              transform: translateX(22px);
+            }
+          }
+        }
+      }
+      .answer-time {
+        .answer-time-counter {
+          display: flex;
+          align-items: center;
+          font-size: 30px;
+          .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 33px;
+            height: 33px;
+            border: 1px solid $white;
+            border-radius: 50%;
+            font-size: 30px;
+  
+            cursor: pointer;
+            transition: all .4s;
+            &:hover {
+              color: $black;
+              background-color: $white;
+            }
+          }
+          .answer-time-seconds {
+            padding: 0 20px;
+          }
+        }
+      }
+      .buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin: 50px 0 0 0;
+        .buttons-default {
+          margin: 0 20px 0 0;
+        }
+        .buttons-default,
+        .buttons-save {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 287px;
+          height: 62px;
+        }
+      }
+    }
+  }
+}
