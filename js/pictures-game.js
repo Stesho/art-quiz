@@ -27,12 +27,12 @@ class Round {
     question.textContent = `Какую из картин написал ${this.img[this.round].author}?`;
     for(let i = 0; i < this.pic.length; i++) {
       if(i === this.truePic) {
-        this.pic[i].src = `../../../art-quiz/art-quiz/assets/full/${this.img[this.round].imageNum}full.jpg`;  
+        this.pic[i].src = `../../art-quiz/assets/full/${this.img[this.round].imageNum}full.jpg`;  
         continue;
       }
 
       let randPic = getRandom(0, images.length);
-      this.pic[i].src = `../../../art-quiz/art-quiz/assets/full/${randPic}full.jpg`;
+      this.pic[i].src = `../../art-quiz/assets/full/${randPic}full.jpg`;
     }
   }
   startRound() {  
@@ -57,7 +57,7 @@ class Round {
   }
   showResult(isTrue) {
     result.classList.toggle('hide');
-    resultPic.src = `../../../art-quiz/art-quiz/assets/full/${this.img[this.round].imageNum}full.jpg`;
+    resultPic.src = `../../art-quiz/assets/full/${this.img[this.round].imageNum}full.jpg`;
     resultPicName.textContent = this.img[this.round].name;
     resultAuthor.textContent = `${this.img[this.round].author}, ${this.img[this.round].year}г.`;
     if(isTrue) {
