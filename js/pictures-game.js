@@ -15,6 +15,7 @@ const falseAnsAudio = document.querySelector('#false-answer');
 const progress = document.querySelector('.header__progress');
 const time = document.querySelector('.header__time');
 const total = document.querySelector('.total__wrapper');
+const score = document.querySelector('.total__score');
 let timer;
 
 function getRandom(min, max) {
@@ -102,7 +103,7 @@ class Round {
     }, 1000);
   }
   showTotal () {
-    
+    score.textContent = `${this.trueAnswers}/10`;
   }
 }
 

@@ -91,4 +91,8 @@ class Router {
     new Route('pictures-quiz', 'pictures-quiz.html'),
     new Route('pictures-game', 'pictures-game.html'),
   ]);
+  
+  localStorage.setItem('volume', 50);
+  localStorage.setItem('time', 20);
+  localStorage.setItem('isTimer', true);
 }());
