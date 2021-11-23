@@ -1,5 +1,6 @@
-let main = document.querySelector('.main');
-let categories = document.querySelectorAll('.category__picture img');
+const main = document.querySelector('.main');
+const categories = document.querySelectorAll('.category__picture img');
+const score = document.querySelectorAll('.category__score');
 let category;
 
 function getCategory(event) {
@@ -17,4 +18,12 @@ main.addEventListener('click', (event) => {
   localStorage.setItem('category', category);
 })
 
-
+if(localStorage.getItem('trueAnswers') !== null) {
+  let ans = localStorage.getItem('trueAnswers').split('-');
+  for(let i = 0; i < ans.length; i++) {
+    if(ans[i] !== '') {
+      categories[i].style.filter = 'none';
+      score[i].textContent = `${ans[i]}/10`;
+    }
+  }
+}

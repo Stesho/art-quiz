@@ -16,6 +16,7 @@ const progress = document.querySelector('.header__progress');
 const time = document.querySelector('.header__time');
 const total = document.querySelector('.total__wrapper');
 const score = document.querySelector('.total__score');
+const nextQuizBtn = document.querySelector('.total__button');
 let timer;
 
 function getRandom(min, max) {
@@ -131,6 +132,16 @@ nextBtn.addEventListener('click', () => {
     total.classList.toggle('hide');
     round.showTotal();
   }
+})
+
+nextQuizBtn.addEventListener('click', () => {
+  let ans = '---------';
+  if(localStorage.getItem('trueAnswers') !== null) {
+    ans = localStorage.getItem('trueAnswers');
+  }
+  ans = ans.split('-');
+  ans[category] = round.trueAnswers;
+  localStorage.setItem('trueAnswers', ans.join('-'));
 })
 
 let round = new Round();
