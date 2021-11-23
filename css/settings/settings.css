@@ -215,6 +215,10 @@
   border: 1px solid #fff;
   border-radius: 50%;
   font-size: 30px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: pointer;
   -webkit-transition: all .4s;
   transition: all .4s;

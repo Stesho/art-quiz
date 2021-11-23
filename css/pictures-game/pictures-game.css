@@ -52,6 +52,7 @@
 }
 
 .wrapper__pictures-game .container .header .header__time-line .header__progress {
+  width: 0%;
   height: 100%;
   background-color: #FFBCA2;
 }

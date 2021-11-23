@@ -11,6 +11,9 @@ const resultPicName = document.querySelector('.result__picture-name');
 const resultAuthor = document.querySelector('.result__author');
 const trueAnsAudio = document.querySelector('#true-answer');
 const falseAnsAudio = document.querySelector('#false-answer');
+const progress = document.querySelector('.header__progress');
+const time = document.querySelector('.header__time');
+let timer;
 
 function getRandom(min, max) {
   return Math.floor(Math.random() * (max - min )) + min;
@@ -69,6 +72,22 @@ class Round {
       resultIcon.style.backgroundColor = '#FF7E7E';  
     }
   }
+  startTimer() {
+    let step = localStorage.getItem('time');
+    let width = 0;
+    let seconds = step;
+    timer = setInterval(() => {
+      let format = seconds >= 10 ? seconds : '0' + seconds;
+      progress.style.width = width + '%';
+      time.textContent = `0:${format}`;
+      seconds--;
+      width += 100/step;
+      if(seconds < 0) {
+        this.showResult(false);
+        clearInterval(timer);
+      }
+    }, 1000);
+  }
 }
 
 pics.addEventListener('click', (event) => {
@@ -80,12 +99,14 @@ pics.addEventListener('click', (event) => {
     falseAnsAudio.play();
     round.showResult(false);
   }
+  clearInterval(timer);
 })
 
 nextBtn.addEventListener('click', () => {
   result.classList.toggle('hide');
   if(round.round !== 10) {
-    round.startRound()
+    round.startRound();
+    round.startTimer();
   }
   else {
     console.log('FINISH');
@@ -94,3 +115,4 @@ nextBtn.addEventListener('click', () => {
 
 let round = new Round();
 round.startRound();
+round.startTimer();
