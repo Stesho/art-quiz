@@ -4,7 +4,8 @@ const category = localStorage.getItem('category');
 const pics = document.querySelector('.main__pictures');
 const question = document.querySelector('.main__question');
 const nextBtn = document.querySelector('.result__button');
-const result = document.querySelector('.result__overlay');
+const overlay = document.querySelector('.result__overlay');
+const result = document.querySelector('.result__wrapper');
 const resultIcon = document.querySelector('.result__icon');
 const resultPic = document.querySelector('.result__picture');
 const resultPicName = document.querySelector('.result__picture-name');
@@ -13,6 +14,7 @@ const trueAnsAudio = document.querySelector('#true-answer');
 const falseAnsAudio = document.querySelector('#false-answer');
 const progress = document.querySelector('.header__progress');
 const time = document.querySelector('.header__time');
+const total = document.querySelector('.total__wrapper');
 let timer;
 
 function getRandom(min, max) {
@@ -25,6 +27,7 @@ class Round {
     this.img = images.slice(category*10, category*10 + 10);
     this.round = -1;
     this.truePic = 0;
+    this.trueAnswers = 0;
   }
   setImg() {  
     question.textContent = `Какую из картин написал ${this.img[this.round].author}?`;
@@ -53,13 +56,13 @@ class Round {
     }
 
     if(this.truePic === index) {
+      this.trueAnswers++;
       return true;
     }
 
     return false;
   }
   showResult(isTrue) {
-    result.classList.toggle('hide');
     resultPic.src = `../../art-quiz/assets/full/${this.img[this.round].imageNum}full.jpg`;
     resultPicName.textContent = this.img[this.round].name;
     resultAuthor.textContent = `${this.img[this.round].author}, ${this.img[this.round].year}г.`;
@@ -73,20 +76,33 @@ class Round {
     }
   }
   startTimer() {
+    let isTimer = localStorage.getItem('isTimer');
+    if(isTimer === 'false') {
+      return;
+    }
     let step = localStorage.getItem('time');
     let width = 0;
     let seconds = step;
+    progress.style.width = '0%';
+    time.textContent = seconds >= 10 ? `0:${seconds}` : `0:0${seconds}`;
     timer = setInterval(() => {
+      if(seconds - 1 < 0) {
+        overlay.classList.toggle('hide');
+        this.showResult(false);
+        clearInterval(timer);
+        return;
+      }
+
+      seconds--;
+      width += 100/step;
+
       let format = seconds >= 10 ? seconds : '0' + seconds;
       progress.style.width = width + '%';
       time.textContent = `0:${format}`;
-      seconds--;
-      width += 100/step;
-      if(seconds < 0) {
-        this.showResult(false);
-        clearInterval(timer);
-      }
     }, 1000);
+  }
+  showTotal () {
+    
   }
 }
 
@@ -99,17 +115,20 @@ pics.addEventListener('click', (event) => {
     falseAnsAudio.play();
     round.showResult(false);
   }
+  overlay.classList.toggle('hide');
   clearInterval(timer);
 })
 
 nextBtn.addEventListener('click', () => {
-  result.classList.toggle('hide');
-  if(round.round !== 10) {
+  if(round.round < 9) {
+    overlay.classList.toggle('hide');
     round.startRound();
     round.startTimer();
   }
   else {
-    console.log('FINISH');
+    result.classList.toggle('hide');
+    total.classList.toggle('hide');
+    round.showTotal();
   }
 })
 

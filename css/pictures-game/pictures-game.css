@@ -168,6 +168,7 @@
   margin: 10px 0 36px 0;
   font-size: 22px;
   font-weight: 400;
+  text-align: center;
 }
 
 .wrapper__pictures-game .container .main .result__overlay .result .result__button {
@@ -185,6 +186,61 @@
   background-color: #FFBCA2;
   border-radius: 60px;
   font-size: 22px;
+  cursor: pointer;
+}
+
+.wrapper__pictures-game .container .main .result__overlay .total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  padding: 40px;
+  top: 149px;
+  left: 720px;
+  background-color: #fff;
+  color: #010101;
+  border-radius: 20px;
+  font-size: 42px;
+  font-weight: 600;
+}
+
+.wrapper__pictures-game .container .main .result__overlay .total .total__icon {
+  margin: 0 0 40px 0;
+  width: 166px;
+  height: 155px;
+  background: url("../../assets/svg/cup.svg");
+}
+
+.wrapper__pictures-game .container .main .result__overlay .total .total__score {
+  margin: 40px 0 60px 0;
+  font-size: 82px;
+  font-weight: bold;
+}
+
+.wrapper__pictures-game .container .main .result__overlay .total .total__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 400px;
+  height: 62px;
+  background-color: #FFBCA2;
+  border-radius: 60px;
+  color: #010101;
+  font-size: 22px;
+  font-weight: 500;
   cursor: pointer;
 }
 /*# sourceMappingURL=pictures-game.css.map */
