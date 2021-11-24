@@ -1,12 +1,4 @@
 .wrapper-settings {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100vh;
   background-color: #010101;
   color: #fff;
   font-family: Gilroy;
@@ -14,8 +6,11 @@
 }
 
 .wrapper-settings .container {
-  width: 1300px;
+  height: calc(100vh - 91px);
+  max-width: 1340px;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .wrapper-settings .container .header {
@@ -66,7 +61,7 @@
 }
 
 .wrapper-settings .container .main {
-  margin: 100px 0 0 0;
+  margin: 100px 0 52px 0;
 }
 
 .wrapper-settings .container .main .volume,
@@ -91,7 +86,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 490px;
+  max-width: 490px;
+  width: 100%;
 }
 
 .wrapper-settings .container .main .volume .volume-bar-wrapper .volume-bar {

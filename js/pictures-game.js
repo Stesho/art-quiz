@@ -1,5 +1,6 @@
 import images from './images.js';
 
+
 const category = localStorage.getItem('category');
 const pics = document.querySelector('.main__pictures');
 const question = document.querySelector('.main__question');
@@ -12,6 +13,7 @@ const resultPicName = document.querySelector('.result__picture-name');
 const resultAuthor = document.querySelector('.result__author');
 const trueAnsAudio = document.querySelector('#true-answer');
 const falseAnsAudio = document.querySelector('#false-answer');
+const finishAudio = document.querySelector('#finish-game');
 const progress = document.querySelector('.header__progress');
 const time = document.querySelector('.header__time');
 const total = document.querySelector('.total__wrapper');
@@ -38,7 +40,6 @@ class Round {
         this.pic[i].src = `../../art-quiz/assets/full/${this.img[this.round].imageNum}full.jpg`;  
         continue;
       }
-
       let randPic = getRandom(0, images.length);
       this.pic[i].src = `../../art-quiz/assets/full/${randPic}full.jpg`;
     }
@@ -130,6 +131,7 @@ nextBtn.addEventListener('click', () => {
   else {
     result.classList.toggle('hide');
     total.classList.toggle('hide');
+    finishAudio.play();
     round.showTotal();
   }
 })

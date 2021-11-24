@@ -5,15 +5,17 @@ $green: #3DDA69;
 $red: #FF7E7E;
 
 .wrapper__pictures-game {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  // display: flex;
+  // flex-direction: column;
+  // height: 100vh;
   background-color: $black;
   font-family: Gilroy;
   color: $white;
   .container {
-    width: 826px;
+    max-width: 866px;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 20px;
     .header {
       display: flex;
       align-items: center;
@@ -29,7 +31,9 @@ $red: #FF7E7E;
       }
       .header__time-line {
         height: 4px;
-        width: 715px;
+        // max-width: 715px;
+        width: 100%;
+        margin: 0 20px;
         background-color: #a4a4a4;
         .header__progress {
           width: 0%;
@@ -44,6 +48,7 @@ $red: #FF7E7E;
     }
     .main {
       position: relative;
+      margin: 0 0 19px 0;
       .main__question {
         font-size: 28px;
         font-weight: 700;
@@ -56,13 +61,16 @@ $red: #FF7E7E;
         margin: 64px 0 0 0;
         .main__picture {
           object-fit: cover;
-          width: 400px;
+          max-width: 400px;
           height: 280px;
+          width: 100%;
           border-radius: 20px;
           cursor: pointer;
         }
       }
       .result__overlay {
+        // display: flex;
+        // justify-content: center;
         position: fixed; 
         width: 100%;
         height: 100%;
@@ -77,8 +85,10 @@ $red: #FF7E7E;
           align-items: center;
           position: absolute;
           padding: 30px;
+          margin: 0 auto;
           top: 149px;
-          left: 699px;
+          // left: 699px;
+          left: calc((100vw - 522px)/2);
           background-color: $white;
           color: $black;
           border-radius: 20px;
@@ -170,4 +180,24 @@ $red: #FF7E7E;
   }
 }
 
+@media (max-width: 1024px) {
+  .wrapper__pictures-game {
+    .container {
+      // .header {
+      //   .header__time-line {
+      //     max-width: 580px;
+      //   }
+      // }
+      .main {
+        .main__pictures {
+          justify-content: center;
+          .main__picture {
+            width: 320px;
+            height: 307px;
+          }
+        }
+      }      
+    }
+  }
+}
 

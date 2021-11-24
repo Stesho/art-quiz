@@ -57,9 +57,11 @@ class Router {
         if (this.readyState === 4 && this.status === 200) {
           let filename = htmlName.slice(0, htmlName.lastIndexOf('.')) + '.js?n=' + scope.count;
           scope.count++;
+          // scope.hideElement();
           scope.rootElem.innerHTML = this.responseText;
+          // setTimeout(() => {scope.showElement()}, 3000);
           scope.removeScripts();
-          scope.addScript(filename);
+          scope.addScript(filename);  
         }
       };
       xhttp.open('GET', url, true);
@@ -81,6 +83,30 @@ class Router {
     script.src = './js/' + filename;
     script.type = 'module';
     this.rootElem.after(script);
+  }
+  hideElement() {
+    let step = 0.1;
+    let opacity = 1;
+    let timer1 = setInterval(() => {
+      console.log(opacity);
+      this.rootElem.style.opacity = opacity;
+      opacity = (opacity - step).toFixed(1);
+      if(opacity <= 0) {
+        clearInterval(timer1);
+      }
+    }, 50);
+  }
+  showElement () {
+    let step = 0.1;
+    let opacity = 0;
+    let timer2 = setInterval(() => {
+      console.log(opacity);
+      this.rootElem.style.opacity = opacity;
+      opacity = (Number(opacity) + step).toFixed(1);
+      if(opacity >= 1) {
+        clearInterval(timer2);
+      }
+    }, 50);
   }
 }
 
