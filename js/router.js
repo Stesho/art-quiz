@@ -116,6 +116,8 @@ class Router {
     new Route('settings', 'settings.html'),
     new Route('pictures-quiz', 'pictures-quiz.html'),
     new Route('pictures-game', 'pictures-game.html'),
+    new Route('artists-quiz', 'artists-quiz.html'),
+    new Route('artists-game', 'artists-game.html'),
   ]);
 
   if(localStorage.getItem('volume') === null) {

@@ -7,6 +7,10 @@
   border-radius: 60px;
   font-size: 22px;
   font-weight: 500;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: pointer;
   -webkit-transition: all .4s;
   transition: all .4s;
@@ -55,7 +59,6 @@ body {
 }
 
 .wrapper {
-  height: calc(100vh - 91px);
   opacity: 1;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;

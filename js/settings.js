@@ -83,7 +83,3 @@ defaultBtn.addEventListener('click', () => {
 
 getSettings();
 
-const wr = document.querySelector('.wrapper');
-console.log('h = ' + wr.clientHeight);
-console.log('h = ' + wr.offsetHeight);
-console.log('h = ' + wr.scrollHeight);

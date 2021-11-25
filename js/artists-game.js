@@ -1,8 +1,9 @@
 import images from './images.js';
 
 const category = localStorage.getItem('category');
-const pics = document.querySelector('.main__pictures');
-const question = document.querySelector('.main__question');
+
+const pic = document.querySelector('.main__picture');
+const buttons = document.querySelector('.main__buttons');
 const nextBtn = document.querySelector('.result__button');
 const overlay = document.querySelector('.result__overlay');
 const result = document.querySelector('.result__wrapper');
@@ -26,38 +27,38 @@ function getRandom(min, max) {
 
 class Round {
   constructor() {
-    this.pic = document.querySelectorAll('.main__picture');
-    this.img = images.slice(category*10, category*10 + 10);
+    this.authors = document.querySelectorAll('.main__button');
+    this.img = images.slice(category*10 + images.length/2, category*10 + images.length/2 + 10);
     this.round = -1;
-    this.truePic = 0;
+    this.trueAuthor = 0;
     this.trueAnswers = 0;
   }
   setImg() {  
-    question.textContent = `Какую из картин написал ${this.img[this.round].author}?`;
-    for(let i = 0; i < this.pic.length; i++) {
-      if(i === this.truePic) {
-        this.pic[i].src = `../../art-quiz/assets/full/${this.img[this.round].imageNum}full.jpg`;  
+    pic.src = `../../art-quiz/assets/full/${this.img[this.round].imageNum}full.jpg`;   
+    for(let i = 0; i < this.authors.length; i++) {
+      if(i === this.trueAuthor) {
+        this.authors[i].textContent = this.img[this.round].author;  
         continue;
       }
-      let randPic = getRandom(0, images.length);
-      this.pic[i].src = `../../art-quiz/assets/full/${randPic}full.jpg`;
+      let randAuthor = getRandom(0, images.length);
+      this.authors[i].textContent = images[randAuthor].author;  
     }
   }
   startRound() {  
     this.round++;
-    this.truePic = getRandom(0, 4);
+    this.trueAuthor = getRandom(0, 4);
     this.setImg();
   }
-  getTruePic(target) {
+  getTrueAuthor(target) {
     let index;
       
-    for(let i = 0; i < this.pic.length; i++) {
-      if(this.pic[i] === target) {
+    for(let i = 0; i < this.authors.length; i++) {
+      if(this.authors[i] === target) {
         index = i;
       }
     }
 
-    if(this.truePic === index) {
+    if(this.trueAuthor === index) {
       this.trueAnswers++;
       return true;
     }
@@ -108,8 +109,8 @@ class Round {
   }
 }
 
-pics.addEventListener('click', (event) => {
-  if(round.getTruePic(event.target)) {
+buttons.addEventListener('click', (event) => {
+  if(round.getTrueAuthor(event.target)) {
     if(localStorage.getItem('volume') !== '0') trueAnsAudio.play();
     round.showResult(true);
   }
@@ -137,12 +138,12 @@ nextBtn.addEventListener('click', () => {
 
 nextQuizBtn.addEventListener('click', () => {
   let ans = ',,,,,,,,,';
-  if(localStorage.getItem('picturesAnswers') !== null) {
-    ans = localStorage.getItem('picturesAnswers');
+  if(localStorage.getItem('artistsAnswers') !== null) {
+    ans = localStorage.getItem('artistsAnswers');
   }
   ans = ans.split(',');
   ans[category] = round.trueAnswers;
-  localStorage.setItem('picturesAnswers', ans.join(','));
+  localStorage.setItem('artistsAnswers', ans.join(','));
 })
 
 let round = new Round();

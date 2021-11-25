@@ -1,0 +1,187 @@
+$pink: #FFBCA2;
+$black: #010101;
+$white: #fff; 
+$green: #3DDA69;
+$red: #FF7E7E;
+
+.wrapper__artists-game {
+  // display: flex;
+  // flex-direction: column;
+  // height: 100vh;
+  background-color: $black;
+  font-family: Gilroy;
+  color: $white;
+  .container {
+    max-width: 866px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 35px 0 0 0;
+      .header__close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        font-size: 22px;
+      }
+      .header__time-line {
+        height: 4px;
+        // max-width: 715px;
+        width: 100%;
+        margin: 0 20px;
+        background-color: #a4a4a4;
+        .header__progress {
+          width: 0%;
+          height: 100%; 
+          background-color: $pink;
+        }
+      }
+      .header__time {
+        font-size: 26px;
+        font-weight: 700;
+      }
+    }
+    .main {
+      position: relative;
+      margin: 0 0 19px 0;
+      .main__question {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 50px 0 30px 0;
+      }
+      .main__picture {
+        margin: 0 0 20px 0;
+        width: 825px;
+        height: 498px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+      .main__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px calc(826px - 2*400px);
+        .main__button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 400px;
+          height: 62px;
+          border: 1.5px solid $white;
+        }
+      }
+      .result__overlay {
+        // display: flex;
+        // justify-content: center;
+        position: fixed; 
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.6); 
+        z-index: 2; 
+        .result {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          padding: 30px;
+          margin: 0 auto;
+          top: 149px;
+          // left: 699px;
+          left: calc((100vw - 522px)/2);
+          background-color: $white;
+          color: $black;
+          border-radius: 20px;
+          font-size: 32px;
+          font-weight: 500;
+          .result__picture {
+            object-fit: cover;  
+            width: 462px;
+            height: 416px;
+            margin: 0 0 40px 0;
+            border-radius: 20px;
+          }
+          .result__icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top: 355px;
+            left: 50px;
+            border-radius: 50%;
+            background-color: $green;
+            user-select: none;
+          }
+          .result__picture-name {
+            width: 462px;
+            word-wrap: break-word;
+            text-align: center;
+          }
+          .result__author {
+            margin: 10px 0 36px 0;
+            font-size: 22px;
+            font-weight: 400;
+            text-align: center;
+          }
+          .result__button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            height: 62px;
+            background-color: $pink;
+            border-radius: 60px;
+            font-size: 22px;
+            cursor: pointer;
+          }
+        }
+        .total {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position: absolute;
+          padding: 40px;
+          top: 149px;
+          left: 720px;
+          background-color: $white;
+          color: $black;
+          border-radius: 20px;
+          font-size: 42px;
+          font-weight: 600;
+          .total__icon {
+            margin: 0 0 40px 0;
+            width: 166px;
+            height: 155px;
+            background: url("../../assets/svg/cup.svg");
+          }
+          .total__score {
+            margin: 40px 0 60px 0;
+            font-size: 82px;
+            font-weight: bold;
+          }
+          .total__button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            height: 62px;
+            background-color: $pink;
+            border-radius: 60px;
+            color: $black;
+            font-size: 22px;
+            font-weight: 500;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

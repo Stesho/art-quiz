@@ -18,6 +18,7 @@ $white: #fff;
   font-size: 22px;
   font-weight: 500;
 
+  user-select: none;
   cursor: pointer;
   transition: all .4s;
   &:hover {

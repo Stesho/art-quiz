@@ -18,8 +18,8 @@ main.addEventListener('click', (event) => {
   localStorage.setItem('category', category);
 })
 
-if(localStorage.getItem('picturesAnswers') !== null) {
-  let ans = localStorage.getItem('picturesAnswers').split(',');
+if(localStorage.getItem('artistsAnswers') !== null) {
+  let ans = localStorage.getItem('artistsAnswers').split(',');
   for(let i = 0; i < ans.length; i++) {
     if(ans[i] !== '') {
       categories[i].style.filter = 'none';
