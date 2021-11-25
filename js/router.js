@@ -57,11 +57,14 @@ class Router {
         if (this.readyState === 4 && this.status === 200) {
           let filename = htmlName.slice(0, htmlName.lastIndexOf('.')) + '.js?n=' + scope.count;
           scope.count++;
-          // scope.hideElement();
-          scope.rootElem.innerHTML = this.responseText;
-          // setTimeout(() => {scope.showElement()}, 3000);
-          scope.removeScripts();
-          scope.addScript(filename);  
+
+          scope.hideElement();
+          setTimeout(() => {
+            scope.rootElem.innerHTML = this.responseText
+            scope.showElement();
+            scope.removeScripts();
+            scope.addScript(filename);  
+          }, 700);
         }
       };
       xhttp.open('GET', url, true);
@@ -91,10 +94,10 @@ class Router {
       console.log(opacity);
       this.rootElem.style.opacity = opacity;
       opacity = (opacity - step).toFixed(1);
-      if(opacity <= 0) {
+      if(opacity < 0) {
         clearInterval(timer1);
       }
-    }, 50);
+    }, 25);
   }
   showElement () {
     let step = 0.1;
@@ -103,7 +106,7 @@ class Router {
       console.log(opacity);
       this.rootElem.style.opacity = opacity;
       opacity = (Number(opacity) + step).toFixed(1);
-      if(opacity >= 1) {
+      if(opacity > 1) {
         clearInterval(timer2);
       }
     }, 50);
