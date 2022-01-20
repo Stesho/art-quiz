@@ -1,4 +1,7 @@
 .wrapper__artists-game {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   background-color: #010101;
   font-family: Gilroy;
   color: #fff;
@@ -12,28 +15,16 @@
 }
 
 .wrapper__artists-game .container .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   padding: 35px 0 0 0;
 }
 
 .wrapper__artists-game .container .header .header__close {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: 18px;
   height: 18px;
   font-size: 22px;
@@ -72,30 +63,20 @@
   margin: 0 0 20px 0;
   width: 825px;
   height: 498px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 20px;
 }
 
 .wrapper__artists-game .container .main .main__buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 15px calc(826px - 2*400px);
 }
 
 .wrapper__artists-game .container .main .main__buttons .main__button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 400px;
   height: 62px;
   border: 1.5px solid #fff;
@@ -112,19 +93,10 @@
 }
 
 .wrapper__artists-game .container .main .result__overlay .result {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   padding: 30px;
   margin: 0 auto;
@@ -138,8 +110,7 @@
 }
 
 .wrapper__artists-game .container .main .result__overlay .result .result__picture {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 462px;
   height: 416px;
   margin: 0 0 40px 0;
@@ -147,15 +118,9 @@
 }
 
 .wrapper__artists-game .container .main .result__overlay .result .result__icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   width: 60px;
   height: 60px;
@@ -163,10 +128,7 @@
   left: 50px;
   border-radius: 50%;
   background-color: #3DDA69;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .wrapper__artists-game .container .main .result__overlay .result .result__picture-name {
@@ -183,15 +145,9 @@
 }
 
 .wrapper__artists-game .container .main .result__overlay .result .result__button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 400px;
   height: 62px;
   background-color: #FFBCA2;
@@ -201,16 +157,9 @@
 }
 
 .wrapper__artists-game .container .main .result__overlay .total {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   padding: 40px;
   top: 149px;
@@ -236,15 +185,9 @@
 }
 
 .wrapper__artists-game .container .main .result__overlay .total .total__button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 400px;
   height: 62px;
   background-color: #FFBCA2;
